@@ -9,20 +9,14 @@ import Register from "./pages/Register";
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         {/* Layout kullanılan sayfalar */}
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <Home />
-            </Layout>
-          }
-        />
+        <Route path="/" element={<Navigate to="/products" replace />} />
 
         <Route
           path="/products"
